@@ -14,6 +14,37 @@ The main goal of this repository is to facilitate testing and exploration of Arg
 
 ## Repository Structure
 
+├── ansible.cfg
+├── ansible-navigator.log
+├── bootstrap.yaml
+├── collections
+│   └── requirements.yaml
+├── gitops
+│   ├── applications
+│   │   └── bgd
+│   │       ├── base
+│   │       │   ├── bgd-deployment.yaml
+│   │       │   ├── bgd-route.yaml
+│   │       │   ├── bgd-svc.yaml
+│   │       │   └── kustomization.yaml
+│   │       └── overlays
+│   │           └── default
+│   │               ├── bgd-deployment-patch.yaml
+│   │               └── kustomization.yaml
+│   ├── bootstrap
+│   │   └── bgd-boostrap.yaml
+│   └── installation
+│       ├── argocd-app-bootstrap.yaml
+│       ├── argocd-server.yaml
+│       └── gitops-operator.yaml
+├── group_vars
+│   ├── all
+│   │   └── main.yml
+│   └── cluster1
+│       └── vault.yaml
+├── inventory
+├── README.md
+
 ## Setup Instructions
 
 1. **Install the required packages**
@@ -69,7 +100,6 @@ $ oc get appset -n openshift-gitops
 6. **Success**
 
 This configuration will create an Application for each [pull request]https://github.com/automationiberia/argocd-preview-environments/pulls labeled as "preview."
-
 
 ```bash
 $ oc get app -n openshift-gitops
