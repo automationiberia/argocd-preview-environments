@@ -68,7 +68,8 @@ $ oc get appset -n openshift-gitops
 
 6. **Success**
 
-This should create an Application for every PR listed here that has the preview label.
+This configuration will create an Application for each [pull request]https://github.com/automationiberia/argocd-preview-environments/pulls labeled as "preview."
+
 
 ```bash
 $ oc get app -n openshift-gitops
