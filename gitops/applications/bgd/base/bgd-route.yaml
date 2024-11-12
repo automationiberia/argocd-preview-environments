@@ -11,5 +11,5 @@ spec:
   to:
     kind: Service
     name: bgd
-    weight: 100
+    weight: 200
 ...
