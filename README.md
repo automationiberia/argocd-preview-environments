@@ -69,8 +69,8 @@ $  python3 -m pip install ansible-builder --user
    github:
      owner: user or organization
      repo: repository name
-     labels:
-       - label that shoul match
+     labels: (Optional)
+       - label that must match (e.g., "preview") for creating an Application for each pull request.
    ```
    - Commit and push all changes
 
@@ -84,6 +84,7 @@ $  python3 -m pip install ansible-builder --user
 $ vim group_vars/cluster1/vault.yaml
 $ vim group_vars/all/main.yml
 $ ansible-vault encrypt group_vars/*/vault.yaml
+$ vim .vault_password
 ```
 4. **Create OCP object needed to deploy Openshift GitOps and bootstrap the application**
 
