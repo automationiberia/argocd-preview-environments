@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: bgd-preview-environments
+  name: bgd-appset-preview-environments
   namespace: openshift-gitops
 spec:
   generators:
