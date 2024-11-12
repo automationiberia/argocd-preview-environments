@@ -1,0 +1,15 @@
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: "{{ argocd_repository_secret_name }}"
+  namespace: "{{ argocd_namespace | default('openshift-gitops')}}"
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  password: "{{ argocd_repository_password }}"
+  type: "{{ argocd_repository_type | default('git') }}"
+  url: "{{ argocd_repository_url }}"
+  username: "{{ argocd_repository_username }}"
+type: Opaque
+...

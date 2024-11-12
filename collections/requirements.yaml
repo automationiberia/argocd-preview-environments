@@ -1,0 +1,6 @@
+---
+collections:
+  - ansible.controller
+  - ansible.utils
+  - community.general
+...

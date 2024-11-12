@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap
+  namespace: openshift-gitops
+spec:
+  ignoreDifferences:
+  - kind: ServiceAccount
+    jsonPointers:
+    - /imagePullSecrets
+    - /secrets
+  destination:
+    name: ""
+    namespace: openshift-gitops
+    server: "https://kubernetes.default.svc"
+  source:
+    path:  gitops/bootstrap
+    repoURL: "https://github.com/automationiberia/argocd-preview-environments.git"
+    targetRevision: "main"
+  project: default
+  syncPolicy:
+    automated: {}
+...

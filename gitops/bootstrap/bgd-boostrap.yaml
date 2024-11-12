@@ -1,0 +1,34 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bgd-preview-environments
+  namespace: openshift-gitops
+spec:
+  generators:
+    - pullRequest:
+        requeueAfterSeconds: 300
+        github:
+          owner: automationiberia
+          repo: argocd-preview-environments
+          labels:
+            - preview
+  template:
+    metadata:
+      name: 'bgd-{{branch}}-{{number}}'
+    spec:
+      source:
+        repoURL: 'https://github.com/automationiberia/argocd-preview-environments.git'
+        targetRevision: '{{head_sha}}'
+        path: gitops/applications/bgd/overlays/default
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'bgd-{{branch}}-{{number}}'
+...

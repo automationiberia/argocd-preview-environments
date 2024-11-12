@@ -1,0 +1,30 @@
+---
+# OCP credentials
+ocp_api_key: "{{ vault_ocp_api_key }}"
+ocp_api_host: "{{ vault_ocp_api_host }}"
+ocp_api_validate_certs: "{{ vault_ocp_api_validate_certs }}"
+
+# Amazon ccess credentials
+aws_access_key: "{{ vault_aws_access_key }}"
+aws_secret_key: "{{ vault_aws_secret_key }}"
+aws_region: "{{ vault_aws_region }}"
+
+# AWS S3 bucket PAH data
+s3_bucket_pah_name: "hub-demo-bucket-{{ vault_ocp_api_host.split('.')[2] }}"
+s3_bucket_secret_pah_name: "s3-secret-automationhub-demo"
+s3_bucket_host: "{{ vault_s3_bucket_host }}"
+
+# AWS S3 bucket QUAY data
+s3_bucket_quay_name: "quay-demo-bucket-{{ vault_ocp_api_host.split('.')[2] }}"
+
+# Namespaces
+aap_ocp_namespace: "aap"
+quay_ocp_namespace: "quay-registry"
+pipelines_ocp_namespace: "pipelines-demo"
+
+# ArgoCD
+argocd_repository_secret_name: "{{ vault_argocd_repository_secret_name }}"
+argocd_repository_password: "{{ vault_argocd_repository_password }}"
+argocd_repository_url: "{{ vault_argocd_repository_url }}"
+argocd_repository_username: "{{ vault_argocd_repository_username }}"
+...
