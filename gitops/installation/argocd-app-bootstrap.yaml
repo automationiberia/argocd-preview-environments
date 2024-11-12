@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap
+  name: bootstrap-pr-generator
   namespace: openshift-gitops
 spec:
   ignoreDifferences:
