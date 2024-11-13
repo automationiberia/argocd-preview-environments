@@ -102,7 +102,7 @@ $ oc get appset -n openshift-gitops
 
 6. **Success**
 
-This configuration will create an Application for each https://github.com/automationiberia/argocd-preview-environments/pulls[pull request] labeled as "preview."
+This configuration will create an Application for each [pull request](https://github.com/automationiberia/argocd-preview-environments/pulls) labeled as "preview."
 
 ```bash
 $ oc get app -n openshift-gitops
