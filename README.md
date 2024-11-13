@@ -14,6 +14,7 @@ The main goal of this repository is to facilitate testing and exploration of Arg
 
 ## Repository Structure
 
+```bash
 ├── ansible.cfg
 ├── ansible-navigator.log
 ├── bootstrap.yaml
@@ -44,12 +45,13 @@ The main goal of this repository is to facilitate testing and exploration of Arg
 │       └── vault.yaml
 ├── inventory
 ├── README.md
+```
 
 ## Setup Instructions
 
 1. **Install the required packages**
 
-```
+```bash
 $  python3 -m pip install ansible-navigator --user
 $  python3 -m pip install ansible-builder --user
 ```
