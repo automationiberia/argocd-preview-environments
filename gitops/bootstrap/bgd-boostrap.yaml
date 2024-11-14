@@ -7,7 +7,7 @@ metadata:
 spec:
   generators:
     - pullRequest:
-        requeueAfterSeconds: 300
+        requeueAfterSeconds: 120
         github:
           owner: automationiberia
           repo: argocd-preview-environments
