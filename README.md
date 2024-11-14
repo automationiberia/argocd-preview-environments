@@ -65,6 +65,13 @@ $  python3 -m pip install ansible-builder --user
    cd argocd-preview-environments
    ```
 
+   - Update the Application configuration in `gitops/installation/argocd-app-bootstrap.yaml` with your GitHub repository details if needed.
+
+   ```yaml
+   source:
+     repoURL: 'https://github.com/owner/repository_name.git'
+   ```
+
    - Update the ApplicationSet configuration in `gitops/bootstrap/bgd-boostrap.yaml` with your GitHub repository details if needed.
 
    ```yaml
@@ -73,6 +80,10 @@ $  python3 -m pip install ansible-builder --user
      repo: repository name
      labels: (Optional)
        - label that must match (e.g., "preview") for creating an Application for each pull request.
+
+   source:
+     repoURL: 'https://github.com/owner/repository_name.git'
+   ```
    ```
    - Commit and push all changes
 
