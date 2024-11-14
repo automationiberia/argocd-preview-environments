@@ -14,6 +14,7 @@ The main goal of this repository is to facilitate testing and exploration of Arg
 
 ## Repository Structure
 
+```bash
 ├── ansible.cfg
 ├── ansible-navigator.log
 ├── bootstrap.yaml
@@ -44,12 +45,13 @@ The main goal of this repository is to facilitate testing and exploration of Arg
 │       └── vault.yaml
 ├── inventory
 ├── README.md
+```
 
 ## Setup Instructions
 
 1. **Install the required packages**
 
-```
+```bash
 $  python3 -m pip install ansible-navigator --user
 $  python3 -m pip install ansible-builder --user
 ```
@@ -63,6 +65,13 @@ $  python3 -m pip install ansible-builder --user
    cd argocd-preview-environments
    ```
 
+   - Update the Application configuration in `gitops/installation/argocd-app-bootstrap.yaml` with your GitHub repository details if needed.
+
+   ```yaml
+   source:
+     repoURL: 'https://github.com/owner/repository_name.git'
+   ```
+
    - Update the ApplicationSet configuration in `gitops/bootstrap/bgd-boostrap.yaml` with your GitHub repository details if needed.
 
    ```yaml
@@ -71,6 +80,10 @@ $  python3 -m pip install ansible-builder --user
      repo: repository name
      labels: (Optional)
        - label that must match (e.g., "preview") for creating an Application for each pull request.
+
+   source:
+     repoURL: 'https://github.com/owner/repository_name.git'
+   ```
    ```
    - Commit and push all changes
 
@@ -100,7 +113,7 @@ $ oc get appset -n openshift-gitops
 
 6. **Success**
 
-This configuration will create an Application for each [pull request]https://github.com/automationiberia/argocd-preview-environments/pulls labeled as "preview."
+This configuration will create an Application for each [pull request](https://github.com/automationiberia/argocd-preview-environments/pulls) labeled as "preview."
 
 ```bash
 $ oc get app -n openshift-gitops
