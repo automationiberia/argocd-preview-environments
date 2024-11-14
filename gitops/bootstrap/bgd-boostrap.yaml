@@ -9,7 +9,7 @@ spec:
     - pullRequest:
         requeueAfterSeconds: 120
         github:
-          owner: automationiberia
+          owner: silvinux
           repo: argocd-preview-environments
           labels:
             - preview
